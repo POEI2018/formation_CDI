@@ -9,5 +9,6 @@
 </head>
 <body>
 	<h1>Page de debug des beans :</h1>
+	<p>${clientService.test()}</p>
 </body>
 </html>
