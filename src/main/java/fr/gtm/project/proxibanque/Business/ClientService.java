@@ -4,6 +4,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import fr.gtm.project.proxibanque.domain.Client;
 import fr.gtm.project.proxibanque.persistence.ClientDao;
 
 @Named
@@ -13,7 +14,10 @@ public class ClientService {
 	@Inject
 	private ClientDao clientDao ;
 	
-	public String test() {
-		return this.clientDao.getTest();
+	public String createClient(final String name) {
+		final Client client = new Client();
+		client.setLastname(name);
+		this.clientDao.create(client);
+		return "C'est bien créé dans ma base de donnée" ; 
 	}
 }
