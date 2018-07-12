@@ -1,8 +1,8 @@
 package fr.gtm.project.proxibanque.domain;
 
 import java.time.LocalDate;
+import java.util.List;
 
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,8 +35,8 @@ public class Client implements HbEntity{
 	@JoinColumn(name = "adress_id", referencedColumnName="id")
 	private Address address ; 
 	
-	//@OneToMany(mappedBy="id")
-	//private Account account; 
+	@OneToMany(mappedBy="client")
+	private List<Account> account; 
 	
 	
 	

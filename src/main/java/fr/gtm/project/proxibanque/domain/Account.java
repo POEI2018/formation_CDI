@@ -31,8 +31,9 @@ public class Account implements HbEntity {
 	@JoinColumn(name = "checkBook_id", referencedColumnName="id")
 	private CheckBook checkBook;
 	
-	//@ManyToOne
-	//private Client client;
+	@ManyToOne
+	@JoinColumn(name="id_Client", referencedColumnName="id_client")
+	private Client client;
 
 	public Integer getId() {
 		return id;
