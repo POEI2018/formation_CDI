@@ -5,8 +5,6 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 
-import org.hibernate.Session;
-
 import fr.gtm.project.proxibanque.domain.Client;
 
 /**
@@ -20,17 +18,17 @@ import fr.gtm.project.proxibanque.domain.Client;
 @ApplicationScoped
 public class ClientDao extends Repository<Client> {
 
-	Session session;
+	//Session session;
 
-	public ClientDao() {
-		this.session = HibernateUtil.getSessionFactory().openSession();
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public ClientDao() {	
 	}
 
-	public void create(Client client) {
-		this.session.beginTransaction();
-		// this.entityManager.persist(client);
-		// this.entityManager.getTransaction().commit();
-	}
+    
 
 	@Override
 	public List<Client> findAll() {

@@ -1,5 +1,6 @@
 package fr.gtm.project.proxibanque.persistence;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,10 +13,12 @@ import org.slf4j.LoggerFactory;
 
 import fr.gtm.project.proxibanque.domain.HbEntity;
 
-public abstract class Repository<ENTITY extends HbEntity> {
+public abstract class Repository<ENTITY extends HbEntity> implements Serializable {
 
+	
+	private static final long serialVersionUID = 1L;
 	private static final Logger LOGGER = LoggerFactory.getLogger(Repository.class);
-	private Session session;
+	protected Session session;
 
 	public Repository() {
 		this.session = HibernateUtil.getSessionFactory().openSession();

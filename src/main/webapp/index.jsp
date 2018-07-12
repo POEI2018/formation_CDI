@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core_1_1" %>
+<%@ page import="fr.gtm.project.proxibanque.domain.Client" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +10,6 @@
 </head>
 <body>
 	<h1>Page de debug des beans :</h1>
-	<p>${clientService.createClient("nadir")}</p>
+	<p>${defaultCreateClient.test()}</p>
 </body>
 </html>
