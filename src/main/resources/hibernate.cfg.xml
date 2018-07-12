@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC
     "-//Hibernate/Hibernate Configuration DTD//EN"
     "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
@@ -10,7 +11,11 @@
 		<property name="hibernate.connection.password"></property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</property>
 		<!-- <property name="show_sql">true</property> -->
-		<property name="hibernate.hbm2ddl.auto">update</property> 
-		<mapping class="fr.gtm.project.proxibanque.domain.Client"></mapping>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<mapping class="fr.gtm.project.proxibanque.domain.Client" />
+		<mapping class="fr.gtm.project.proxibanque.domain.Account" />
+		<mapping class="fr.gtm.project.proxibanque.domain.Address" />
+		<mapping class="fr.gtm.project.proxibanque.domain.BankCard" />
+		<mapping class="fr.gtm.project.proxibanque.domain.CheckBook" />
 	</session-factory>
 </hibernate-configuration>

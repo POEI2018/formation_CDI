@@ -1,6 +1,5 @@
 package fr.gtm.project.proxibanque.domain;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 import javax.persistence.Basic;
@@ -9,11 +8,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="client")
-public class Client implements Serializable {
+public class Client implements HbEntity{
 	
 	
 	private static final long serialVersionUID = 1L;
@@ -23,13 +25,18 @@ public class Client implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id ;
 	
-	@Basic
+	
 	private String lastname ;
-	@Column(name="firstname")
 	private String firstname ; 
 	private LocalDate birthDate ;
 	private String number ;
 	
+	@OneToOne
+	@JoinColumn(name = "adress_id", referencedColumnName="id")
+	private Address address ; 
+	
+	//@OneToMany(mappedBy="id")
+	//private Account account; 
 	
 	
 	
