@@ -35,7 +35,7 @@ public class Client implements HbEntity{
 	@JoinColumn(name = "adress_id", referencedColumnName="id")
 	private Address address ; 
 	
-	@OneToMany(mappedBy="client")
+	@OneToMany(mappedBy="client") // la mapped by fait reference a l'attribu java dans la classe Account
 	private List<Account> account; 
 	
 	

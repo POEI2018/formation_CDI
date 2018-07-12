@@ -32,7 +32,7 @@ public class Account implements HbEntity {
 	private CheckBook checkBook;
 	
 	@ManyToOne
-	@JoinColumn(name="id_Client", referencedColumnName="id_client")
+	@JoinColumn(name="id_Client", referencedColumnName="id_client") // le ref col name fait reference a la colonne SQL dans la table client
 	private Client client;
 
 	public Integer getId() {
