@@ -17,7 +17,7 @@ public class ClientService {
 	public String createClient(final String name) {
 		final Client client = new Client();
 		client.setLastname(name);
-		this.clientDao.create(client);
+		this.clientDao.save(client);
 		return "C'est bien créé dans ma base de donnée" ; 
 	}
 }
