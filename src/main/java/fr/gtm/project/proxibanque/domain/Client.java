@@ -38,7 +38,7 @@ public class Client implements HbEntity{
 	@OneToMany(mappedBy="client") // la mapped by fait reference a l'attribu java dans la classe Account
 	private List<Account> account; 
 	
-	//commentaire
+	
 	
 	public Integer getId() {
 		return id;
